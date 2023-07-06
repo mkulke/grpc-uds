@@ -1,0 +1,21 @@
+syntax = "proto3";
+package attester;
+
+service Attester {
+    rpc Tee (TeeRequest) returns (TeeResponse);
+    rpc Evidence (EvidenceRequest) returns (EvidenceResponse);
+}
+
+message TeeRequest {}
+
+message TeeResponse {
+    string tee = 1;
+}
+
+message EvidenceRequest {
+    string challenge = 1;
+}
+
+message EvidenceResponse {
+    string evidence = 1;
+}
